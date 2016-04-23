@@ -23,7 +23,7 @@ Note that the database dump and development private key files were removed from 
   * Install and configure Apache to serve the PHP application
   * Install and configure MariaDB (MySQL replacement), and import a database dump (database dump not included)
   * Clone the GIT repo for the web application into the webserver directory and set permissions (repo private key not included)
-  * Create a moodledata directly and set permissions
+  * Create a moodledata directory and set permissions
 
 ### Other Tips ###
 
