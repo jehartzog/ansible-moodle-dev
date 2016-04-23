@@ -8,7 +8,8 @@ Note that the database dump and development private key files were removed from 
 
 * Install [VirtualBox](https://www.virtualbox.org)
 * Install [Vagrant](https://www.vagrantup.com)
-* If using Windows, run `$ vagrant plugin install vagrant-guest_ansible` to allow [Ansible to run inside the guest VM](https://github.com/vovimayhem/vagrant-guest_ansible).
+* If using Windows, run `$ vagrant plugin install vagrant-guest_ansible` to allow [Ansible to run inside the guest VM](https://github.com/vovimayhem/vagrant-guest_ansible)
+* Clone this repo and `cd` into the directory
 * Run `$ vagrant up` and watch the magic!
 * Once complete, visit <http://localhost:8080> to see the page up and running
 
