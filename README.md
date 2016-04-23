@@ -1,4 +1,4 @@
-# README #
+# Easy Local Moodle Dev Server #
 
 This is an example of how to get a local dev server up and running without any interaction or configuration.
 
@@ -10,7 +10,7 @@ Note that the database dump and development private key files were removed from 
 * Install [Vagrant](https://www.vagrantup.com)
 * If using Windows, run `$ vagrant plugin install vagrant-guest_ansible` to allow [Ansible to run inside the guest VM](https://github.com/vovimayhem/vagrant-guest_ansible).
 * Run `$ vagrant up` and watch the magic!
-* Once complete, visit http://localhost:8080 to see the page up and running
+* Once complete, visit <http://localhost:8080> to see the page up and running
 
 ### End result ###
 
@@ -36,3 +36,4 @@ Note that the database dump and development private key files were removed from 
 ### Questions? ###
 
 * I created this to show how easy it was to use Vagrant and Ansible to provision and manage a local moodle development webserver. No need to struggle with a Windows stack with a complex GUI configuration that requires significant set up time each time you shift computers.
+* If you have any questions are want more info on how to do this, please ask! I took this on as a small learning project and will be happy to tackle any questions.
