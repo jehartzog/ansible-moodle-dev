@@ -1,0 +1,4 @@
+---
+  db_name: bitnami_moodle
+  db_user: root
+  db_passwd: ''

@@ -1,0 +1,5 @@
+---
+- include: install_apache.yml
+- include: git_clone.yml
+- include: setup_moodledata.yml
+

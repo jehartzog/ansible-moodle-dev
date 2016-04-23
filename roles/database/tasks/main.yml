@@ -1,0 +1,27 @@
+---
+- name: install MariaDB server package
+  apt: name={{ item }} state=latest
+  with_items:
+    - mariadb-server
+    - python-mysqldb
+    - php5-mysqlnd
+  notify:
+    - restart apache2
+
+- name: start Mysql Service
+  service: name=mysql state=started enabled=true
+
+- name: create a new database
+  mysql_db: name={{ db_name }} state=present collation=utf8_general_ci
+
+- name: create a database user
+  mysql_user: name={{ db_user }} password={{ db_passwd }} priv=*.*:ALL host=localhost state=present
+
+- name: drop database if it exists to prepare for import
+  mysql_db: name={{ db_name }} state=absent
+
+- name: copy sample data
+  copy: src=dump.sql.bz2 dest=/tmp/dump.sql.bz2
+
+- name: import database dump
+  mysql_db: state=import name=all target=/tmp/dump.sql.bz2

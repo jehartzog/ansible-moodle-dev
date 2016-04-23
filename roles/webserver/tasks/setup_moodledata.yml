@@ -1,0 +1,5 @@
+- name: creating moodledata folder (no NFS)
+  file: path=/home/ubuntu/moodledata-dev state=directory owner=www-data group=www-data
+#  - name: Mount code folder.
+#    mount: fstype=vboxsf opts=uid={{ project_name }},gid={{ project_name }} name={{ project_root }}/code/ src={{ project_name }} state=mounted
+#    only_if: "$vm == 1"

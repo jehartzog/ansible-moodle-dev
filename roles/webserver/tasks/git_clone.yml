@@ -1,0 +1,23 @@
+---
+- name: Creates .ssh directory for root
+  file: path=/root/.ssh state=directory
+
+- name: upload the private key used for git cloning
+  copy: src=tz_dev_key.pem dest=/root/.ssh/id_rsa mode=0600
+
+- name: install git
+  apt:  name=git state=latest
+
+- name: clear index.html from /var/www/
+  file: path=/var/www/html/index.html state=absent
+
+- name: update owner and group /var/www/html folder to www-data
+  file: path=/var/www/html state=directory recurse=yes owner=www-data group=www-data 
+
+- name: clone GIT repo
+  git: repo=git@bitbucket.org:jehartzog/tutoringzone-moodle.git
+       dest=/var/www/html
+       force=yes
+       accept_hostkey=true
+       key_file=/root/.ssh/id_rsa
+       version={{ branch }}
