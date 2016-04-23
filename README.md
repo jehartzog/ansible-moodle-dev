@@ -19,7 +19,7 @@ Note that the database dump and development private key files were removed from 
   * Forward localhost port 8080 to the VM port 80
   * Create a link between the VM web application files and the host "../html" directory to allow for local file editing
   
-* The ansible playlist will:
+* The Ansible playlist will:
   * Install and configure Apache to serve the PHP application
   * Install and configure MariaDB (MySQL replacement), and import a database dump (database dump not included)
   * Clone the GIT repo for the web application into the webserver directory and set permissions (repo private key not included)
