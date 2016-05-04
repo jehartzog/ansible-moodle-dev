@@ -12,9 +12,6 @@
 - name: apache2 listen on port {{ http_port }}
   lineinfile: dest=/etc/apache2/ports.conf regexp="^Listen " line="Listen {{ http_port }}" state=present
 
-# - name: apache2 virtualhost on port {{ http_port }}
-  # lineinfile: dest=/etc/apache2/sites-available/000-default.conf regexp="^<VirtualHost \*:" line="<VirtualHost *:{{ http_port }}>"
-
 - name: create virtual host file
   template: src=virtualhost.conf.j2 dest=/etc/apache2/sites-available/{{ domain }}.conf
 
