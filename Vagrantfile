@@ -67,6 +67,10 @@ Vagrant.configure(2) do |config|
   # See https://github.com/mitchellh/vagrant/issues/5005
   config.ssh.insert_key = false
   
+  # need to add these packages for temporary bug with windows script https://github.com/vovimayhem/vagrant-guest_ansible/issues/13
+  config.vm.provision :shell, inline: "sudo apt-get update"
+  config.vm.provision :shell, inline: "sudo apt-get -y install libffi-dev libssl-dev"
+  
   config.vm.provision :guest_ansible do |ansible|
     ansible.verbose = "v"
     ansible.playbook = "playbook.yml"
